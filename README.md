@@ -6,7 +6,7 @@ Sendary is a package builder for monorepo.
 
 ## `build`
 
-```json
+```jsonc
 // sendary.json
 {
   // global options
@@ -16,7 +16,7 @@ Sendary is a package builder for monorepo.
 }
 ```
 
-```json
+```jsonc
 // packages/core/build.json
 {
   "entries": {
