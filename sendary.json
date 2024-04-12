@@ -1,5 +1,6 @@
 {
   "build": {
-    "externals": true
+    "externals": true,
+    "format": ["esmodule", "commonjs"]
   }
 }

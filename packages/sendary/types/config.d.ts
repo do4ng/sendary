@@ -3,7 +3,7 @@ import { BuildOptions } from 'esbuild';
 export type Formats = 'esmodule' | 'commonjs';
 
 export interface DefaultBuild {
-  format?: string[] | string;
+  format?: string[];
   externals?: boolean;
 }
 

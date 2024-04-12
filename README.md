@@ -21,10 +21,9 @@ Sendary is a package builder for monorepo.
 {
   "entries": {
     "./src/index.ts": "./dist/index.js",
-    "./src/client.ts": {
-      "output": "./dist/client.js",
+    "./src/lib.ts": {
+      "output": "./dist/lib.js",
 
-      "platform": "browser",
       "format": ["commonjs", "esmodule"]
       // cjs => ./dist/client.js
       // esm => ./dist/client.mjs

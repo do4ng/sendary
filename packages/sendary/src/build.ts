@@ -74,6 +74,7 @@ export async function build(cwd: string = process.cwd()) {
         outfile: $.output,
         bundle: true,
         platform: 'node',
+
         ...buildOptions.compilerOptions,
       };
 
@@ -87,7 +88,36 @@ export async function build(cwd: string = process.cwd()) {
         );
       }
 
-      await esbuildBuild(esbuildOptions);
+      const formats: Array<'commonjs' | 'esmodule'> = (buildOptions.build
+        .format as any) || ['commonjs'];
+
+      const pos = esbuildOptions.outfile.lastIndexOf('.');
+
+      for await (const format of formats) {
+        await esbuildBuild({
+          ...esbuildOptions,
+          outfile:
+            format === 'esmodule'
+              ? `${esbuildOptions.outfile.substr(
+                  0,
+                  pos < 0 ? esbuildOptions.outfile.length : pos
+                )}.mjs`
+              : esbuildOptions.outfile,
+          banner:
+            format === 'esmodule'
+              ? {
+                  js: [
+                    'import{createRequire}from"node:module";',
+                    'import{fileURLToPath}from"node:url";',
+                    'var __filename=fileURLToPath(import.meta.url);',
+                    'var __dirname=fileURLToPath(new URL(".", import.meta.url));',
+                    'var require=createRequire(import.meta.url);',
+                  ].join(''),
+                }
+              : {},
+          format: format === 'commonjs' ? 'cjs' : 'esm',
+        });
+      }
     }
     spinner.stop();
     spinner.clearLine();
