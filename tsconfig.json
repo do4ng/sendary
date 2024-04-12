@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2015",
+
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": false,
+    "lib": ["ESNext", "DOM"],
+
+    "types": ["jest", "node"],
+
+    "baseUrl": ".",
+
+    "paths": {
+      "$*": ["./packages/*"]
+    }
+  },
+  "exclude": ["**/node_modules/**", "**/dist/**"]
+}

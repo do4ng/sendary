@@ -1,0 +1,9 @@
+{
+  "name": "sendary",
+  "version": "0.0.0",
+  "dependencies": {
+    "@sendary/utils": "workspace:*",
+    "esbuild": "^0.20.2",
+    "esbuild-node-externals": "^1.13.0"
+  }
+}

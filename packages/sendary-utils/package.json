@@ -1,0 +1,9 @@
+{
+  "name": "@sendary/utils",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "fast-glob": "^3.3.2"
+  }
+}
