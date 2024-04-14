@@ -89,7 +89,7 @@ export async function build(cwd: string = process.cwd()) {
       }
 
       const formats: Array<'commonjs' | 'esmodule'> = (buildOptions.build
-        .format as any) || ['commonjs'];
+        ?.format as any) || ['commonjs'];
 
       const pos = esbuildOptions.outfile.lastIndexOf('.');
 
