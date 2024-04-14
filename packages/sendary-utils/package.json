@@ -1,7 +1,13 @@
 {
   "name": "@sendary/utils",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.0",
   "main": "./dist/index.js",
+  "types": "./index.d.ts",
+  "repository": "https://github.com/do4ng/sendary",
+  "files": [
+    "./index.d.ts",
+    "dist"
+  ],
   "dependencies": {
     "colors": "^1.4.0",
     "fast-glob": "^3.3.2"

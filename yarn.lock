@@ -5401,6 +5401,7 @@ __metadata:
   resolution: "sendary@workspace:packages/sendary"
   dependencies:
     "@sendary/utils": "workspace:*"
+    animaux: "npm:^0.0.4"
     esbuild: "npm:^0.20.2"
     esbuild-node-externals: "npm:^1.13.0"
   languageName: unknown
