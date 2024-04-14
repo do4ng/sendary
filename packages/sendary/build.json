@@ -1,5 +1,11 @@
 {
   "entries": {
-    "./src/index.ts": "./dist/index.js"
+    "./src/index.ts": "./dist/index.js",
+    "./src/bin.ts": {
+      "output": "./dist/bin.js",
+      "build": {
+        "format": ["commonjs"]
+      }
+    }
   }
 }
